@@ -1,0 +1,64 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3242b/fast && make[1]: вход в каталог «/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/CMakeTmp»
+/usr/bin/make  -f CMakeFiles/cmTC_3242b.dir/build.make CMakeFiles/cmTC_3242b.dir/build
+make[2]: вход в каталог «/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_3242b.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_3242b.dir/src.c.o   -c /home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_3242b
+/snap/cmake/372/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3242b.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_3242b.dir/src.c.o  -o cmTC_3242b 
+/usr/bin/ld: CMakeFiles/cmTC_3242b.dir/src.c.o: в функции «main»:
+src.c:(.text+0x46): неопределённая ссылка на «pthread_create»
+/usr/bin/ld: src.c:(.text+0x52): неопределённая ссылка на «pthread_detach»
+/usr/bin/ld: src.c:(.text+0x5e): неопределённая ссылка на «pthread_cancel»
+/usr/bin/ld: src.c:(.text+0x6f): неопределённая ссылка на «pthread_join»
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_3242b.dir/build.make:107: cmTC_3242b] Ошибка 1
+make[2]: выход из каталога «/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/CMakeTmp»
+make[1]: *** [Makefile:141: cmTC_3242b/fast] Ошибка 2
+make[1]: выход из каталога «/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/CMakeTmp»
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0911a/fast && make[1]: вход в каталог «/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/CMakeTmp»
+/usr/bin/make  -f CMakeFiles/cmTC_0911a.dir/build.make CMakeFiles/cmTC_0911a.dir/build
+make[2]: вход в каталог «/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_0911a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0911a.dir/CheckFunctionExists.c.o   -c /snap/cmake/372/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0911a
+/snap/cmake/372/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0911a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_0911a.dir/CheckFunctionExists.c.o  -o cmTC_0911a  -lpthreads 
+/usr/bin/ld: невозможно найти -lpthreads
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_0911a.dir/build.make:107: cmTC_0911a] Ошибка 1
+make[2]: выход из каталога «/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/CMakeTmp»
+make[1]: *** [Makefile:141: cmTC_0911a/fast] Ошибка 2
+make[1]: выход из каталога «/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/CMakeTmp»
+
+
+
