@@ -1,6 +1,0 @@
-/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/rebuild_cache.dir
-/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/edit_cache.dir
-/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/package_source.dir
-/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/package.dir
-/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/NatVis.dir
-/home/surv/github.com/Survereignty/Corsac2D/build/CMakeFiles/Corsac2D.dir
